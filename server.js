@@ -18,7 +18,7 @@ mongoose
   .then(() => console.log("Db connected"))
   .catch((error) => console.log(error));
 
-app.get("/api/health", (req, res) => {
+app.get("/api/v1/health", (req, res) => {
   res.json({
     service: "Invoice Generator Backend API Server",
     status: "true",
@@ -38,5 +38,5 @@ const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-  console.log(`Backend server running at http://${HOST}:${PORT}`);
+  console.log(`Backend server running at http://${HOST}:${PORT}/`);
 });
