@@ -4,5 +4,6 @@ const authController = require("../controllers/auth");
 
 router.post("/login", authController.loginUser);
 router.post("/register", authController.registerUser);
+router.post("/logout", authController.logoutUser);
 
 module.exports = router;
