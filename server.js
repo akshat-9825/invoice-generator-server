@@ -2,13 +2,19 @@ require("dotenv").config();
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const auth = require("./routes/auth");
+const user = require("./routes/user");
 const errorHandler = require("./middlewares/errorHandler");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(errorHandler);
@@ -27,6 +33,7 @@ app.get("/api/v1/health", (req, res) => {
 });
 
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/user", user);
 
 app.use("/*", (req, res) => {
   res.status(404).json({ errorMessage: "Route not found" });
