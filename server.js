@@ -17,14 +17,10 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      console.log(
-        origin,
-        allowedOrigins[1],
-        `=${origin}` === allowedOrigins[1]
-      );
+      console.log(origin, allowedOrigins[1], `=${origin}` == allowedOrigins[1]);
       if (
         !origin ||
-        `=${origin}` === allowedOrigins[1] ||
+        allowedOrigins[1].includes(origin) ||
         origin === allowedOrigins[0]
       ) {
         callback(null, true);
