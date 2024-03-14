@@ -11,7 +11,7 @@ const app = express();
 
 const allowedOrigins = [
   `http://localhost:${process.env.LOCAL_CLIENT}`,
-  process.env.CLIENT_URL,
+  `${process.env.CLIENT_URL}`,
 ];
 
 app.use(
@@ -21,7 +21,7 @@ app.use(
       if (
         !origin ||
         origin == allowedOrigins[1] ||
-        origin === allowedOrigins[0]
+        `=${origin}` == allowedOrigins[0]
       ) {
         callback(null, true);
       } else {
