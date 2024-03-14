@@ -17,7 +17,7 @@ Deployed on: https://invoice-generator.up.railway.app/
 
 ### Register
 
-```http
+```
   POST /api/v1/auth/register
 ```
 
@@ -30,7 +30,7 @@ Deployed on: https://invoice-generator.up.railway.app/
 
 ### Login
 
-```http
+```
     POST /api/v1/auth/login
 ```
 
@@ -41,7 +41,7 @@ Deployed on: https://invoice-generator.up.railway.app/
 
 ### Logout User
 
-```http
+```
     POST /api/v1/auth/logout
 ```
 
@@ -49,7 +49,7 @@ No params required
 
 ### Verify User
 
-```http
+```
     GET /api/v1/user/
 ```
 
