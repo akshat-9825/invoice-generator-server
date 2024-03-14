@@ -9,7 +9,10 @@ const cors = require("cors");
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173", process.env.CLIENT_URL];
+const allowedOrigins = [
+  `http://localhost:${process.env.LOCAL_CLIENT}`,
+  process.env.CLIENT_URL,
+];
 
 app.use(
   cors({
